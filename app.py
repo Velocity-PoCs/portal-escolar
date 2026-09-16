@@ -1,11 +1,21 @@
 import os
 import sqlite3
+import yaml
 from flask import Flask, request, redirect, render_template, session, url_for, flash, g
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "portal-escolar-dev")
 
 DATABASE = os.path.join(os.path.dirname(__file__), "escola.db")
+CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.yaml")
+
+
+def carregar_config():
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        return yaml.load(f, Loader=yaml.Loader)
+
+
+CONFIG = carregar_config()
 
 
 def get_db():
@@ -73,6 +83,7 @@ def dashboard():
         cargo=session.get("cargo", ""),
         total_alunos=total_alunos,
         total_turmas=total_turmas,
+        ano_letivo=CONFIG["escola"]["ano_letivo"],
     )
 
 

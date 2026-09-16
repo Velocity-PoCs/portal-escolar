@@ -1,0 +1,7 @@
+escola:
+  nome: "Escola Estadual Jardim das Flores"
+  ano_letivo: 2024
+  bimestres: 4
+sistema:
+  itens_por_pagina: 25
+  fuso: "America/Sao_Paulo"
