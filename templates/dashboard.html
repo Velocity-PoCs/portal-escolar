@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Painel{% endblock %}
+{% block content %}
+<h1>Bem-vindo(a), {{ usuario }}</h1>
+<p class="cargo">{{ cargo }}</p>
+<div class="cards">
+    <div class="card"><span class="num">{{ total_alunos }}</span><span class="lbl">Alunos matriculados</span></div>
+    <div class="card"><span class="num">{{ total_turmas }}</span><span class="lbl">Turmas ativas</span></div>
+</div>
+<div class="atalhos">
+    <a class="btn" href="{{ url_for('alunos') }}">Consultar alunos</a>
+    <a class="btn" href="{{ url_for('turmas') }}">Ver turmas</a>
+</div>
+{% endblock %}

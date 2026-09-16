@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ aluno['nome'] }}{% endblock %}
+{% block content %}
+<a class="voltar" href="{{ url_for('alunos') }}">&larr; Voltar</a>
+<h1>{{ aluno['nome'] }}</h1>
+<div class="ficha">
+    <p><strong>Matrícula:</strong> {{ aluno['matricula'] }}</p>
+    <p><strong>Turma:</strong> {{ aluno['turma'] }}</p>
+    <p><strong>Responsável:</strong> {{ aluno['responsavel'] }}</p>
+    <p><strong>Telefone:</strong> {{ aluno['telefone'] }}</p>
+</div>
+<h2>Notas</h2>
+<table>
+    <thead><tr><th>Disciplina</th><th>Bimestre</th><th>Nota</th></tr></thead>
+    <tbody>
+    {% for n in notas %}
+        <tr><td>{{ n['disciplina'] }}</td><td>{{ n['bimestre'] }}º</td><td>{{ n['nota'] }}</td></tr>
+    {% else %}
+        <tr><td colspan="3">Sem notas lançadas.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

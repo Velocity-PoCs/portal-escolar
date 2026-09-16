@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Portal Escolar{% endblock %} - EE Jardim das Flores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if session.get('user') %}
+    <header class="topbar">
+        <div class="brand">EE Jardim das Flores</div>
+        <nav>
+            <a href="{{ url_for('dashboard') }}">Painel</a>
+            <a href="{{ url_for('alunos') }}">Alunos</a>
+            <a href="{{ url_for('turmas') }}">Turmas</a>
+        </nav>
+        <div class="user">
+            <span>{{ session.get('user') }}</span>
+            <a class="logout" href="{{ url_for('logout') }}">Sair</a>
+        </div>
+    </header>
+    {% endif %}
+    <main class="container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for m in messages %}<div class="flash">{{ m }}</div>{% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="rodape">Portal Escolar &middot; Secretaria Acadêmica</footer>
+</body>
+</html>

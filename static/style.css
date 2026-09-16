@@ -1,0 +1,39 @@
+:root { --azul:#1f4e79; --azul2:#2f6fb0; --cinza:#f4f6f8; --borda:#dde3ea; --texto:#243b53; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI",Arial,sans-serif; background:var(--cinza); color:var(--texto); }
+.topbar { display:flex; align-items:center; gap:24px; background:var(--azul); color:#fff; padding:0 24px; height:56px; }
+.brand { font-weight:700; font-size:18px; }
+.topbar nav { display:flex; gap:18px; flex:1; }
+.topbar nav a { color:#dce7f2; text-decoration:none; font-size:14px; }
+.topbar nav a:hover { color:#fff; }
+.topbar .user { display:flex; align-items:center; gap:12px; font-size:14px; }
+.topbar .logout { color:#ffd7d7; text-decoration:none; }
+.container { max-width:960px; margin:28px auto; padding:0 20px; }
+h1 { font-size:24px; }
+.cargo { color:#627d98; margin-top:-8px; }
+.cards { display:flex; gap:18px; margin:24px 0; }
+.card { background:#fff; border:1px solid var(--borda); border-radius:10px; padding:20px 26px; flex:1; text-align:center; }
+.card .num { display:block; font-size:34px; font-weight:700; color:var(--azul); }
+.card .lbl { color:#627d98; font-size:13px; }
+.atalhos { display:flex; gap:12px; }
+.btn { background:var(--azul2); color:#fff; padding:10px 18px; border-radius:8px; text-decoration:none; font-size:14px; }
+.btn:hover { background:var(--azul); }
+table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--borda); border-radius:8px; overflow:hidden; }
+th,td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--borda); font-size:14px; }
+th { background:#eef3f8; color:#486581; }
+td a { color:var(--azul2); text-decoration:none; }
+.busca { display:flex; gap:10px; margin:16px 0; }
+.busca input,.busca select { padding:9px 12px; border:1px solid var(--borda); border-radius:8px; font-size:14px; min-width:220px; }
+.busca button,form button { background:var(--azul2); color:#fff; border:0; padding:9px 18px; border-radius:8px; cursor:pointer; font-size:14px; }
+.login-box { max-width:340px; margin:80px auto; background:#fff; border:1px solid var(--borda); border-radius:12px; padding:32px; text-align:center; }
+.login-box h1 { color:var(--azul); margin-bottom:2px; }
+.login-box .sub { color:#627d98; font-size:13px; margin-top:0; }
+.login-box form { display:flex; flex-direction:column; text-align:left; margin-top:18px; gap:6px; }
+.login-box label { font-size:13px; color:#486581; }
+.login-box input { padding:10px; border:1px solid var(--borda); border-radius:8px; font-size:14px; }
+.login-box button { margin-top:14px; padding:11px; }
+.ficha { background:#fff; border:1px solid var(--borda); border-radius:8px; padding:16px 20px; margin:14px 0; }
+.ficha p { margin:6px 0; font-size:14px; }
+.voltar { color:var(--azul2); text-decoration:none; font-size:13px; }
+.flash { background:#fff4e5; border:1px solid #ffcc80; color:#8a5300; padding:10px 14px; border-radius:8px; margin-bottom:16px; font-size:14px; }
+.rodape { text-align:center; color:#829ab1; font-size:12px; padding:24px 0; }

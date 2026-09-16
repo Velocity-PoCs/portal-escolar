@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Alunos{% endblock %}
+{% block content %}
+<h1>Alunos</h1>
+<form class="busca" method="get" action="{{ url_for('alunos') }}">
+    <input type="text" name="busca" placeholder="Buscar por nome" value="{{ busca }}">
+    <button type="submit">Buscar</button>
+</form>
+<table>
+    <thead><tr><th>Matrícula</th><th>Nome</th><th>Turma</th><th>Responsável</th></tr></thead>
+    <tbody>
+    {% for a in alunos %}
+        <tr>
+            <td><a href="{{ url_for('aluno_detalhe', matricula=a['matricula']) }}">{{ a['matricula'] }}</a></td>
+            <td>{{ a['nome'] }}</td>
+            <td>{{ a['turma'] }}</td>
+            <td>{{ a['responsavel'] }}</td>
+        </tr>
+    {% else %}
+        <tr><td colspan="4">Nenhum aluno encontrado.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

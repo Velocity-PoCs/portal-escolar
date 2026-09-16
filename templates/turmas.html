@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Turmas{% endblock %}
+{% block content %}
+<h1>Turmas</h1>
+<form class="busca" method="get" action="{{ url_for('turmas') }}">
+    <select name="turma">
+        <option value="">Selecione a turma</option>
+        {% for t in turmas %}
+        <option value="{{ t['turma'] }}" {% if t['turma'] == turma %}selected{% endif %}>{{ t['turma'] }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Listar</button>
+</form>
+{% if turma %}
+<h2>Turma {{ turma }}</h2>
+<table>
+    <thead><tr><th>Matrícula</th><th>Nome</th><th>Responsável</th></tr></thead>
+    <tbody>
+    {% for a in alunos %}
+        <tr><td>{{ a['matricula'] }}</td><td>{{ a['nome'] }}</td><td>{{ a['responsavel'] }}</td></tr>
+    {% else %}
+        <tr><td colspan="3">Nenhum aluno nesta turma.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+{% endblock %}

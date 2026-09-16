@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Acesso{% endblock %}
+{% block content %}
+<div class="login-box">
+    <h1>Portal Escolar</h1>
+    <p class="sub">Escola Estadual Jardim das Flores</p>
+    <form method="post" action="{{ url_for('login') }}">
+        <label>Usuário</label>
+        <input type="text" name="usuario" autofocus>
+        <label>Senha</label>
+        <input type="password" name="senha">
+        <button type="submit">Entrar</button>
+    </form>
+</div>
+{% endblock %}
